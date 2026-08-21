@@ -51,14 +51,13 @@ public class UsuarioDAO {
     }
 
     public void actualizarUltimoAcceso(int idUsuario, String host) {
-        String sql = "UPDATE usuario SET ultimo_acceso = ?, ultima_ip = ? WHERE id_usuario = ?";
+            String sql = "UPDATE usuario SET ultimo_acceso = NOW(), ultima_ip = ? WHERE id_usuario = ?";
 
         try (Connection con = Conexion.conectar();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
-            ps.setTimestamp(1, Timestamp.valueOf(LocalDateTime.now()));
-            ps.setString(2, host);
-            ps.setInt(3, idUsuario);
+            ps.setString(1, host);
+            ps.setInt(2, idUsuario);
             ps.executeUpdate();
 
         } catch (SQLException e) {

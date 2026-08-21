@@ -50,12 +50,14 @@ public class ControladorLogin {
         Sesion.setUsuario(usuario);
 
         // 4. Actualizar último acceso y host (esto dispara el trigger en BD)
+                // 4. Actualizar último acceso y host (esto dispara el trigger en BD)
+        String host = null;
         try {
-            String host = InetAddress.getLocalHost().getHostAddress();
-            usuarioDAO.actualizarUltimoAcceso(usuario.getIdUsuario(), host);
+            host = InetAddress.getLocalHost().getHostAddress();
         } catch (Exception e) {
             System.out.println("No se pudo obtener el host: " + e.getMessage());
         }
+        usuarioDAO.actualizarUltimoAcceso(usuario.getIdUsuario(), host);
 
         return true;
     }
