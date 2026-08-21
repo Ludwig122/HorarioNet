@@ -1,0 +1,5 @@
+Tuvimos unos detalles al usar la plataforma de GitHub:
+Tanto Dani como Chris tuvieron problemas con sus tokens para
+iniciar sesión y no entendimos bien la plataforma de clickup, al menos
+no para subir el proyecto y su contenido, así que pasamos las versiones de forma manual; por whatsapp asi que en este repositorio Git no se encuentra el historial cuando empezamos a usar la plataforma GitHub, se encuentra en el repositorio de
+Dani
